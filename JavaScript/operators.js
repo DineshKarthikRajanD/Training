@@ -1,7 +1,7 @@
 // 1.Assignment Operator
 
 var a = 10;
-var b = 10;
+var b = 2;
 
 // 2.Arithemtic Operator
 
