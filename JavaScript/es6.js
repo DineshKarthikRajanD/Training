@@ -49,20 +49,61 @@
 // console.log("o",pi)
 
 // 8. Hoisting
-console.log(a);
-var a = 10;
-console.log(a);
+// console.log(a);
+// var a = 10;
+// console.log(a);
 
-console.log(a);
-const a = 10;
-console.log(a);
+// console.log(a);
+// const a = 10;
+// console.log(a);
 
 // Output: ReferenceError: Cannot access 'a' before initialization
 
-console.log(a);
-let a = 10;
-console.log(a);
+// console.log(a);
+// let a = 10;
+// console.log(a);
 
 // Output: SyntaxError: Identifier 'a' has already been declared
 
+// Rest Operator
 
+// function restOperator(a, b, ...arr) {
+//   console.log(arr);
+//   combinedarr = [a, b, ...arr];
+//   console.log(combinedarr);
+// }
+// restOperator("dinesh", "anand", "ajay", "adi", "karthik");
+
+// 4 types of arrow function
+
+// 1 without arugment and paramerter and without return type
+
+arrow1 = () => {
+  console.log("arrow1: hi");
+};
+
+//with return type
+
+arrow2 = () => {
+  var a = 10;
+  return a;
+};
+
+// 2 with arugment and paramerter and without return type
+
+arrow3 = (a, b) => {
+  console.log("arrow3",a + b);
+};
+
+//with return type
+
+arrow4 = (a, b) => {
+  return a + b;
+};
+
+arrow1();
+res1 = arrow2();
+console.log("arrow2",res1);
+arrow3(5, 10);
+res2 = arrow4(5, 10);
+console.log("arrow4",res2);
