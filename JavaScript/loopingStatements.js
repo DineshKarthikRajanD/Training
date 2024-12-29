@@ -30,10 +30,12 @@ obj = {
 };
 
 // console.log(obj.age);
+//Task1:
 
-// Object.keys(obj).forEach((value) => {
-//   console.log(`${key}: ${obj[value]}`);
-// });
+Object.keys(obj).forEach((key) => {
+  let value = obj[key]
+  console.log(`${key}: ${value}`);
+});
 
 // for (const value of obj) {
 //   console.log(value);
@@ -41,7 +43,7 @@ obj = {
 
 // TypeError: obj is not iterable
 
-for (key in obj) {
-  value = obj[key];
-  console.log(key, value);
-}
+// for (key in obj) {
+//   value = obj[key];
+//   console.log(key, value);
+// }
