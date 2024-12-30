@@ -1,0 +1,40 @@
+.one {
+  margin-top: 0px;
+  bottom: 0;
+  background-color: black;
+  height: 30vh;
+  display: flex;
+  gap: 150px;
+}
+
+form {
+  margin-top: 70px;
+}
+
+label {
+  color: aliceblue;
+  margin-left: 20px;
+}
+input {
+  margin-left: 10px;
+}
+
+button {
+  border: none;
+  margin-left: 200px;
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.container1 {
+  color: white;
+}
+.container2 {
+  color: white;
+}
+.container3 {
+  color: white;
+}
