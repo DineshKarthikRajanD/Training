@@ -1,0 +1,10 @@
+.box-model {
+  font-size: 100px;
+  margin: 10px;
+  border: 20px solid black;
+  padding: 10px;
+}
+
+#idSEg {
+  text-align: center;
+}

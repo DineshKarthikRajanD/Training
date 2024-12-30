@@ -1,0 +1,20 @@
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightslategrey;
+}
+
+li:hover {
+  background-color: aliceblue;
+  border-radius: 80%;
+  cursor: pointer;
+  padding: 10px;
+}
