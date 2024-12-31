@@ -27,6 +27,7 @@ const Footer = () => {
       <div className="container3">
         <h3>More to Explore</h3>
         <h5>Gallery</h5>
+        
         <h5>My Account</h5>
         <h5>Contact us</h5>
         <h5>Reedem Rewards</h5>

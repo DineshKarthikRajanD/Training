@@ -21,6 +21,12 @@ const NavBar = () => {
               <Link to="/contact">
                 <li>Contact</li>
               </Link>
+              <Link to="/useeffect">
+                <li>UseEffect</li>
+              </Link>
+              <Link to="/useref">
+                <li>UseRef</li>
+              </Link>
             </ul>
           </div>
         </nav>
