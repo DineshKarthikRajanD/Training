@@ -8,6 +8,7 @@ import Footer from "./Components/FunctionalComponents/Footer";
 import UseEffect from "./Components/FunctionalComponents/UseEffect";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UseRef from "./Components/FunctionalComponents/UseRef";
+import UseContext from "./Components/FunctionalComponents/UseContext";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/useeffect" element={<UseEffect />} />
           <Route path="/useref" element={<UseRef />} />
+          <Route path="/usecontext" element={<UseContext />} />
         </Routes>
         <ClassCompEg />
         <Footer />

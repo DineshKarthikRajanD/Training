@@ -27,6 +27,9 @@ const NavBar = () => {
               <Link to="/useref">
                 <li>UseRef</li>
               </Link>
+              <Link to="/usecontext">
+                <li>UseContext</li>
+              </Link>
             </ul>
           </div>
         </nav>
