@@ -22,6 +22,7 @@ var UseEffect = () => {
   //     </>
   //   );
   var [post, setPost] = useState([]);
+  var [recipes, setRecipes] = useState([]);
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
@@ -34,6 +35,17 @@ var UseEffect = () => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/recipes")
+      .then((res) => {
+        console.log(res.data.recipes);
+        setRecipes(res.data.recipes || []);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <section>
       <h1>Getting data from Json Placeholder API</h1>
@@ -41,6 +53,16 @@ var UseEffect = () => {
       <ol>
         {post.map((element, index) => (
           <li key={index}>{element.title}</li>
+        ))}
+      </ol>
+      <ol
+        style={{ display: "grid", gridTemplateColumns: "auto auto auto auto" }}
+      >
+        {recipes.map((element, index) => (
+          <li key={index}>
+            <img src={element.image} alt="" style={{ width: "100px" }} />
+            <h1>{element.name}</h1>
+          </li>
         ))}
       </ol>
     </section>

@@ -1,6 +1,7 @@
 import React from "react";
 import Component2 from "./ContextComponents/Component2";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export var ThemeProvider = React.createContext();
 const UseContext = () => {
   return (

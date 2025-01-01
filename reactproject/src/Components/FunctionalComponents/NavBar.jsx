@@ -30,6 +30,9 @@ const NavBar = () => {
               <Link to="/usecontext">
                 <li>UseContext</li>
               </Link>
+              <Link to="/usememo">
+                <li>UseMemo</li>
+              </Link>
             </ul>
           </div>
         </nav>
