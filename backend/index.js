@@ -2,6 +2,21 @@ const express = require("express");
 const path = require("path");
 var app = express();
 const PORT = 3001;
+var mdb = require("mongoose");
+const mdbUrl = "mongodb://localhost:27017/KEC";
+const User = require("./models/users");
+const Customer = require("./models/customer");
+
+app.use(express.json());
+
+mdb
+  .connect(mdbUrl)
+  .then(() => {
+    console.log("MongoDB is Successfully Connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.get("/", (req, res) => {
   console.log("Welcome to Backend Server");
@@ -24,4 +39,51 @@ app.get("/next", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Backend Server Started\nUrl: http://localhost:${PORT}`);
+});
+
+app.post("/signup", (req, res) => {
+  console.log(req.body);
+  var { firstName, lastName, email } = req.body;
+  console.log(firstName, lastName, email);
+  try {
+    var newUser = new User({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    });
+
+    newUser.save();
+
+    res.status(200).send("User Added Successfully");
+    console.log("User Added Successfully");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.post("/customer", (req, res) => {
+  console.log(req.body);
+  var { userName, email, password, confirmPassword } = req.body;
+  try {
+    var newCustomer = new Customer({
+      userName: userName,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    });
+    newCustomer.save();
+    res.status(200).send("Customer Added Successfully");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.get("/getsignup", async (req, res) => {
+  try {
+    var allSignUpRecords = await User.find();
+    res.json(allSignUpRecords);
+    console.log("All data Fetch");
+  } catch (error) {
+    console.log(error);
+  }
 });
