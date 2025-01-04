@@ -11,7 +11,7 @@ import UseRef from "./Components/FunctionalComponents/UseRef";
 import UseContext from "./Components/FunctionalComponents/UseContext";
 import UseMemo from "./Components/FunctionalComponents/UseMemo";
 import Login from "./Components/auth/Login";
-import Register from "./Components/auth/register";
+import Register from "./Components/auth/SignUp";
 
 function App() {
   return (
