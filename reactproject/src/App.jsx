@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UseRef from "./Components/FunctionalComponents/UseRef";
 import UseContext from "./Components/FunctionalComponents/UseContext";
 import UseMemo from "./Components/FunctionalComponents/UseMemo";
-import Login from "./Components/auth/login";
+import Login from "./Components/auth/Login";
 import Register from "./Components/auth/register";
 
 function App() {
