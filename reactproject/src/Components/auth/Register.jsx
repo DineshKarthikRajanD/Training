@@ -50,7 +50,7 @@ const Register = () => {
             setFormData({ ...formData, password: e.target.value })
           }
         />
-        <button type="submit">Register</button>
+        <button type="submit">SignUp</button>
       </form>
     </div>
   );
