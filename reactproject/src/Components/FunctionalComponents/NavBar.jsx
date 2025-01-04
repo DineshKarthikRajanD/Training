@@ -2,6 +2,15 @@ import "../../assets/css/NavBar.css";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const email = localStorage.getItem("email");
+
+  const handleLogut = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("email");
+    window.location.reload()
+  };
+
   return (
     <div>
       <header>
@@ -33,6 +42,23 @@ const NavBar = () => {
               <Link to="/usememo">
                 <li>UseMemo</li>
               </Link>
+              {isLoggedIn ? (
+                <>
+                  <li>{email}</li>
+                  <li>
+                    <button onClick={handleLogut}>Logout</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <Link to="/register">
+                    <li>Register</li>
+                  </Link>
+                  <Link to="/login">
+                    <li>Login</li>
+                  </Link>
+                </>
+              )}
             </ul>
           </div>
         </nav>

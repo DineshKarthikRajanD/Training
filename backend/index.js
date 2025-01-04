@@ -3,14 +3,22 @@ const path = require("path");
 var app = express();
 const PORT = 3001;
 var mdb = require("mongoose");
-const mdbUrl = "mongodb://localhost:27017/KEC";
 const User = require("./models/users");
 const Customer = require("./models/customer");
+const cors = require("cors");
+require("dotenv").config();
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
+
+
 mdb
-  .connect(mdbUrl)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("MongoDB is Successfully Connected");
   })
@@ -98,14 +106,22 @@ app.post("/login", async (req, res) => {
       if (existingUser.password != password) {
         res.json({ message: "Invalid Credentials", isLoggedIn: false });
       } else {
-        console.log("Inside If");
-        res.json({ message: "Login Successful", isLoggedIn: true });
+        res.json({
+          message: "Login Successful",
+          isLoggedIn: true,
+          email: email,
+        });
       }
     } else {
-      console.log("Inside Else");
       res.json({ message: "Login Failed", isLoggedIn: false });
     }
   } catch (error) {
     console.log(error);
   }
+});
+
+app.post("/footer", (req, res) => {
+  const { name, email } = req.body;
+  try {
+  } catch (error) {}
 });
