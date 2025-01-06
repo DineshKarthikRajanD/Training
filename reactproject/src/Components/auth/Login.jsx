@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      var req = await axios.post("http://localhost:3001/login", formData);
+      var req = await axios.post("https://training-utua.onrender.com/login", formData);
       console.log(req);
       if (req.status === 200 && req.data.isLoggedIn) {
         setFormData({ email: "", password: "" });

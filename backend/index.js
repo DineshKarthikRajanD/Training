@@ -10,12 +10,23 @@ require("dotenv").config();
 
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://training-azure-eight.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies if needed
   })
 );
-
 
 mdb
   .connect(process.env.MONGO_URL)

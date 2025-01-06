@@ -14,7 +14,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      var req = await axios.post("http://localhost:3001/signup", formData);
+      var req = await axios.post(
+        "https://training-utua.onrender.com/signup",
+        formData
+      );
       console.log(req);
       setFormData({ userName: "", email: "", password: "" });
       navigate("/login");
